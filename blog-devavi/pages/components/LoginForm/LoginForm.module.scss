@@ -1,0 +1,46 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  min-height: 200px;
+  width: 300px;
+  background-color: #333333;
+
+  & > label {
+    padding: 5px;
+    color: #757575;
+  }
+  & > input {
+    padding: 5px;
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    border-bottom: #757575 1px solid;
+    color: #000000;
+    &:hover {
+      background-color: #757575;
+    }
+  }
+  & > button {
+    border: none;
+    background-color: transparent;
+    padding: 5px 35px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      background-color: #757575;
+    }
+  }
+}
+
+.message {
+  padding: 5px;
+  min-height: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #ff000077;
+}

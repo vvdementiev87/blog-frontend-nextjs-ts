@@ -3,7 +3,7 @@ import { useUser } from "../../app/hooks/useUser";
 
 export interface IHeaderComponentProps {}
 
-export default function HeaderComponent(props: IHeaderComponentProps) {
+export default function SubHeaderComponent(props: IHeaderComponentProps) {
   const [username, setUsername] = React.useState("");
 
   const { error, isLoading, data, refetch, status } = useUser(username);
