@@ -11,15 +11,9 @@ const Home: NextPage = () => {
 
   const router = useRouter();
 
-  useEffect(() => {
-    if (!data?.data?.token) {
-      router.push("/login");
-    }
-  }, [data?.data?.token]);
-
   return (
     <div className={styles.wrapper}>
-      <HeaderComponent pagename="Main Page" />
+      <HeaderComponent token={data?.data?.token} />
       <FooterComponent />
     </div>
   );

@@ -1,13 +1,13 @@
 import * as React from "react";
-import styles from "../styles/Login.module.scss";
+import styles from "../styles/Registration.module.scss";
 import type { NextPage } from "next";
-import { LoginForm } from "./components/LoginForm/LoginForm";
 import { useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { LoaderSpinner } from "./components/LoaderSpiner/LoaderSpinner";
+import { RegistrationForm } from "./components/RegistrationForm/RegistrationForm";
 
-const Login: NextPage = () => {
+const Registration: NextPage = () => {
   const { data, isFetching } = useQuery(["authData"], {
     enabled: false,
   });
@@ -30,10 +30,10 @@ const Login: NextPage = () => {
         />
       </div>
       <div className={styles.loginBox}>
-        {isFetching ? <LoaderSpinner /> : <LoginForm />}
+        {isFetching ? <LoaderSpinner /> : <RegistrationForm />}
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Registration;

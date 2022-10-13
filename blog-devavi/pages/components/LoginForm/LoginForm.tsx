@@ -2,12 +2,15 @@ import styles from "./LoginForm.module.scss";
 import { useQuery } from "@tanstack/react-query";
 import * as React from "react";
 import { AuthSevice } from "../../../app/service/auth.service";
+import { useRouter } from "next/router";
 
 export interface ILoginFormProps {}
 
 export function LoginForm(props: ILoginFormProps) {
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
+
+  const router = useRouter();
   const { refetch, data, error } = useQuery(
     ["authData"],
     () => AuthSevice.login(username, password),
@@ -22,22 +25,32 @@ export function LoginForm(props: ILoginFormProps) {
   };
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-      <label htmlFor="username">Username</label>
+      <h1>SIGN IN</h1>
+      <h3>
+        Don`t have account{" "}
+        <button
+          onClick={() => {
+            router.push("/registration");
+          }}
+        >
+          Sign Up
+        </button>
+      </h3>
       <input
         name="username"
         placeholder={"Enter username"}
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
-      <label htmlFor="password">Password</label>
+
       <input
         type={"password"}
         placeholder={"Enter password"}
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      
-      <button>Login</button>
+
+      <button>Sign In</button>
       {error ? (
         <div className={styles.message}>{error?.message}</div>
       ) : (
