@@ -1,20 +1,27 @@
 import styles from "./HeaderComponent.module.scss";
 import * as React from "react";
 import Image from "next/image";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { QueryFunction, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/router";
 import { AuthSevice } from "../../../app/service/auth.service";
+import { IAuthData } from "../../../app/service/auth.service";
 
 export interface IHeaderComponentProps {
-  token: string;
+  token?: string;
 }
 
 const queryKey = "authData";
 
-export function HeaderComponent(props: IHeaderComponentProps) {
-  const { data, refetch, isFetching } = useQuery(
+export default function HeaderComponent(props: IHeaderComponentProps) {
+  const { data, refetch, isFetching } = useQuery<IAuthData, Error>(
     [queryKey],
-    () => AuthSevice.logout(props.token),
+    () => {
+      if (props.token) {
+        return AuthSevice.logout(props.token);
+      } else {
+        throw Error;
+      }
+    },
     {
       enabled: false,
     }
@@ -31,7 +38,7 @@ export function HeaderComponent(props: IHeaderComponentProps) {
     <header className={styles.header}>
       <div className={styles.container}>
         <Image
-          src="/images/DEVAVI_logo.png"
+          src="/images/DEVAVI_logo_black.png"
           alt="Logo"
           width={128}
           height={64}

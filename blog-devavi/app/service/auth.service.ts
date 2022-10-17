@@ -3,6 +3,21 @@ import axios, { AxiosResponse } from "axios";
 const API_URL = "https://devavi.ru/index.php/";
 const TOKEN = "Bearer ";
 
+export interface IAuthData {
+  success: boolean;
+  data?: {
+    token?: string;
+    expiresOn?: {
+      date: string;
+      timezone_type: number;
+      timezone: string;
+    };
+    uuid?: string;
+    username?: string;
+  };
+  reason?: string;
+}
+
 export const AuthSevice = {
   async login(username: string, password: string) {
     const json = JSON.stringify({ username: username, password: password });

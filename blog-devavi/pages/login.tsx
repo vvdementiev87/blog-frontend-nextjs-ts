@@ -1,14 +1,15 @@
 import * as React from "react";
 import styles from "../styles/Login.module.scss";
 import type { NextPage } from "next";
-import { LoginForm } from "./components/LoginForm/LoginForm";
+import LoginForm from "./components/LoginForm/LoginForm";
 import { useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { LoaderSpinner } from "./components/LoaderSpiner/LoaderSpinner";
+import LoaderSpinner from "./components/LoaderSpiner/LoaderSpinner";
+import { IAuthData } from "../app/service/auth.service";
 
 const Login: NextPage = () => {
-  const { data, isFetching } = useQuery(["authData"], {
+  const { data, isFetching } = useQuery<IAuthData, Error>(["authData"], {
     enabled: false,
   });
   const router = useRouter();

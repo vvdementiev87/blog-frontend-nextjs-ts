@@ -3,7 +3,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 
 export interface ILoaderSpinnerProps {}
 
-export function LoaderSpinner(props: ILoaderSpinnerProps) {
+export default function LoaderSpinner(props: ILoaderSpinnerProps) {
   const [loading, setLoading] = React.useState(true);
   const [color, setColor] = React.useState("#ffffff");
   return (

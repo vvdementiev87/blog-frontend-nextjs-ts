@@ -3,11 +3,11 @@ import { useQuery } from "@tanstack/react-query";
 import * as React from "react";
 import { AuthSevice } from "../../../app/service/auth.service";
 import { useRouter } from "next/router";
-import { UserSevice } from "../../../app/service/user.servise";
+import { IUserData, UserSevice } from "../../../app/service/user.servise";
 
 export interface IRegistrationFormProps {}
 
-export function RegistrationForm(props: IRegistrationFormProps) {
+export default function RegistrationForm(props: IRegistrationFormProps) {
   const [username, setUsername] = React.useState("");
   const [firstname, setFirstname] = React.useState("");
   const [lastname, setLastname] = React.useState("");
@@ -16,7 +16,7 @@ export function RegistrationForm(props: IRegistrationFormProps) {
   const [errorMessage, setErrorMessage] = React.useState("");
 
   const router = useRouter();
-  const { refetch, data, error } = useQuery(
+  const { refetch, data, error } = useQuery<IUserData, Error>(
     ["userData"],
     () => UserSevice.createUser(username, password, firstname, lastname),
     {

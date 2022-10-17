@@ -8,13 +8,11 @@ export interface IBlogInfoProps {
   text: string;
 }
 
-export function BlogInfo(props: IBlogInfoProps) {
+export default function BlogInfo(props: IBlogInfoProps) {
   const [currentDate, setCurrentDate] = React.useState(0);
   React.useEffect(() => {
     const date = new Date();
-    const timeLeft = date.getTime() - props.date.getTime();
-    console.log(date.toISOString());
-    console.log(props.date.toISOString());
+    const timeLeft = date?.getTime() - props.date?.getTime();
     setCurrentDate(timeLeft / 3600);
   }, []);
 
@@ -26,7 +24,7 @@ export function BlogInfo(props: IBlogInfoProps) {
           <h1>{props.title}</h1>
           <div>
             <h4>
-              {props.date.toLocaleDateString("ru-RU", {
+              {props.date?.toLocaleDateString("ru-RU", {
                 year: "numeric",
                 month: "long",
                 day: "numeric",

@@ -3,6 +3,14 @@ import axios, { AxiosResponse } from "axios";
 const API_URL = "https://devavi.ru/index.php/";
 const TOKEN = "Bearer ";
 
+export interface IUserData {
+  success: boolean;
+  data?: {
+    uuid?: string;
+  };
+  reason?: string;
+}
+
 export const UserSevice = {
   async createUser(
     username: string,

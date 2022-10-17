@@ -1,17 +1,17 @@
 import styles from "./LoginForm.module.scss";
 import { useQuery } from "@tanstack/react-query";
 import * as React from "react";
-import { AuthSevice } from "../../../app/service/auth.service";
+import { AuthSevice, IAuthData } from "../../../app/service/auth.service";
 import { useRouter } from "next/router";
 
 export interface ILoginFormProps {}
 
-export function LoginForm(props: ILoginFormProps) {
+export default function LoginForm(props: ILoginFormProps) {
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
 
   const router = useRouter();
-  const { refetch, data, error } = useQuery(
+  const { refetch, data, error } = useQuery<IAuthData, Error>(
     ["authData"],
     () => AuthSevice.login(username, password),
     {

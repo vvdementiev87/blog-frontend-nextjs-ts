@@ -2,14 +2,13 @@ import styles from "../styles/Home.module.scss";
 import { useQuery } from "@tanstack/react-query";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
-import { HeaderComponent } from "./components/HeaderComponent/HeaderComponent";
-import { FooterComponent } from "./components/FooterComponent/FooterComponent";
-import { BlogInfo } from "./components/BlogInfo/BlogInfo";
-import { text } from "stream/consumers";
+import HeaderComponent from "./components/HeaderComponent/HeaderComponent";
+import FooterComponent from "./components/FooterComponent/FooterComponent";
+import BlogInfo from "./components/BlogInfo/BlogInfo";
+import { IAuthData } from "../app/service/auth.service";
 
 const Home: NextPage = () => {
-  const { data } = useQuery(["authData"]);
+  const { data } = useQuery<IAuthData, Error>(["authData"]);
 
   const router = useRouter();
 

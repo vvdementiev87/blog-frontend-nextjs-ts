@@ -4,11 +4,12 @@ import type { NextPage } from "next";
 import { useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { LoaderSpinner } from "./components/LoaderSpiner/LoaderSpinner";
-import { RegistrationForm } from "./components/RegistrationForm/RegistrationForm";
+import LoaderSpinner from "./components/LoaderSpiner/LoaderSpinner";
+import RegistrationForm from "./components/RegistrationForm/RegistrationForm";
+import { IAuthData } from "../app/service/auth.service";
 
 const Registration: NextPage = () => {
-  const { data, isFetching } = useQuery(["authData"], {
+  const { data, isFetching } = useQuery<IAuthData, Error>(["authData"], {
     enabled: false,
   });
   const router = useRouter();
