@@ -23,7 +23,8 @@ export default function BlogInfo(props: IBlogInfoProps) {
       <div className={styles.blogLeft}>
         <div className={styles.blogCard}>
           <h3>{props.category}</h3>
-          <Link href={"/posts/${props.id}"}>
+          <h3>{props.id}</h3>
+          <Link href={"/posts/" + props.id}>
             <h1>{props.title}</h1>
           </Link>
           <div>

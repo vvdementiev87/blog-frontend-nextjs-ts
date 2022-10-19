@@ -36,12 +36,11 @@ const Home: NextPage<IHomePageProps> = (
         <LoaderSpinner />
       ) : (
         <BlogInfo
-          id="1cc0bd41-b65e-4cd4-a8bf-f28bde18c53b"
-          category="Interior"
-          /* {posts.data.data.posts[0].post} */
-          title={posts.data.data.posts[0].post}
-          date={new Date(2022, 9, 13)}
-          text="Nulla et commodo turpis. Etiam hendrerit ornare pharetra. Cras eleifend purus vitae lorem venenatis bibendum. Sed commodo mi quis augue finibus, ut feugiat erat aliquam."
+          id={posts.data.data.posts[0].uuid}
+          category={posts.data.data.posts[0].post.category}
+          title={posts.data.data.posts[0].post.title}
+          date={new Date(posts.data.data.posts[0].post.date)}
+          text={posts.data.data.posts[0].post.text}
         />
       )}
 

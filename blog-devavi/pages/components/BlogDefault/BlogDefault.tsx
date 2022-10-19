@@ -2,7 +2,7 @@ import * as React from "react";
 import styles from "./BlogDefault.module.scss";
 
 export interface IBlogDefaultProps {
-  category: string;
+  category: any;
   title: string;
   date: Date;
   text: any;

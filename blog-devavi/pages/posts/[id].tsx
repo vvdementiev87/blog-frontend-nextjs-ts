@@ -8,6 +8,8 @@ import { IAuthData } from "../../app/service/auth.service";
 import BlogDefault from "../components/BlogDefault/BlogDefault";
 
 const Home: NextPage = () => {
+  const { query } = useRouter();
+  console.log(useRouter());
   const { data } = useQuery<IAuthData, Error>(["authData"]);
 
   return (
@@ -15,7 +17,7 @@ const Home: NextPage = () => {
       <HeaderComponent token={data?.data?.token} />
       <BlogDefault
         author="Kadin Dias"
-        category="Interior"
+        category={query.id}
         title="How to Get Started With Interior Design"
         date={new Date(2022, 9, 13)}
         text={
