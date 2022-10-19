@@ -1,5 +1,5 @@
 import styles from "./HeaderComponent.module.scss";
-import * as React from "react";
+import React from "react";
 import Image from "next/image";
 import { QueryFunction, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/router";
@@ -45,7 +45,9 @@ export default function HeaderComponent(props: IHeaderComponentProps) {
         />
         <div className={styles.wrapper}>
           <ul>
-            <li>Home</li>
+            <li>
+              <a href={"/"}>Home</a>
+            </li>
             <li>Travel</li>
             <li>Food</li>
             <li>Livestyle</li>

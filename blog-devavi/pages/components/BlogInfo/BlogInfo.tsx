@@ -1,7 +1,9 @@
 import * as React from "react";
 import styles from "./BlogInfo.module.scss";
+import Link from "next/link";
 
 export interface IBlogInfoProps {
+  id: string;
   category: string;
   title: string;
   date: Date;
@@ -21,7 +23,9 @@ export default function BlogInfo(props: IBlogInfoProps) {
       <div className={styles.blogLeft}>
         <div className={styles.blogCard}>
           <h3>{props.category}</h3>
-          <h1>{props.title}</h1>
+          <Link href={"/posts/${props.id}"}>
+            <h1>{props.title}</h1>
+          </Link>
           <div>
             <h4>
               {props.date?.toLocaleDateString("ru-RU", {
