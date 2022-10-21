@@ -9,6 +9,7 @@ import { PostsSevice } from "../app/service/posts.service";
 import LoaderSpinner from "./components/LoaderSpiner/LoaderSpinner";
 import { InferGetStaticPropsType } from "next";
 import AllPosts from "./components/AllPosts/AllPosts";
+import LatestPosts from "./components/LatestPosts/LatestPosts";
 
 export const getStaticProps = async () => {
   const posts: any = await PostsSevice.showPosts();
@@ -44,6 +45,7 @@ const Home: NextPage<IHomePageProps> = (
           text={posts.data.data.posts[0].post.text}
         />
       )}
+      {posts.isFetching ? <LoaderSpinner /> : <LatestPosts />}
       {posts.isFetching ? <LoaderSpinner /> : <AllPosts />}
       <FooterComponent />
     </div>

@@ -1,10 +1,11 @@
 import styles from "./HeaderComponent.module.scss";
 import React from "react";
 import Image from "next/image";
-import { QueryFunction, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useRouter } from "next/router";
 import { AuthSevice } from "../../../app/service/auth.service";
 import { IAuthData } from "../../../app/service/auth.service";
+import Link from "next/link";
 
 export interface IHeaderComponentProps {
   token?: string;
@@ -46,7 +47,9 @@ export default function HeaderComponent(props: IHeaderComponentProps) {
         <div className={styles.wrapper}>
           <ul>
             <li>
-              <a href={"/"}>Home</a>
+              <Link href={"/"}>
+                <a>Home</a>
+              </Link>
             </li>
             <li>Travel</li>
             <li>Food</li>
