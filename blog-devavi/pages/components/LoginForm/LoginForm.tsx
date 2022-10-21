@@ -22,6 +22,10 @@ export default function LoginForm(props: ILoginFormProps) {
   const handleSubmit = (e: any) => {
     e.preventDefault();
     refetch();
+    console.log(username);
+    console.log(password);
+    console.log(data);
+    console.log(error);
   };
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
@@ -50,7 +54,7 @@ export default function LoginForm(props: ILoginFormProps) {
         onChange={(e) => setPassword(e.target.value)}
       />
 
-      <button>Sign In</button>
+      <button type="submit">Sign In</button>
       {error ? (
         <div className={styles.message}>{error?.message}</div>
       ) : (
