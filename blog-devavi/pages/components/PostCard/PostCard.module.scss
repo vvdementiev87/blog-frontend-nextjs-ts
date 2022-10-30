@@ -14,8 +14,10 @@
   height: 100%;
   max-width: 424px;
   min-height: 332px;
+  position: relative;
 }
 .cardText {
+  z-index: 10;
   padding: 20px;
   background-color: #ffffff;
   width: 100%;

@@ -42,6 +42,7 @@ const AllPosts: React.FunctionComponent<IAllPostsProps> = (props) => {
                     category={post.post.category}
                     title={post.post.title}
                     date={new Date(post.post.date)}
+                    imgDir={"./images/postImg1.jpg"}
                   />
                 </div>
               ))

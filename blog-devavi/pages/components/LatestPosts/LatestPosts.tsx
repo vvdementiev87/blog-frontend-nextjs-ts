@@ -13,7 +13,7 @@ const LatestPosts: React.FunctionComponent<ILatestPostsProps> = (props) => {
     <div className={styles.postsMain}>
       <div className={styles.postsContainer}>
         <div className={styles.postsTop}>
-          <h1>All Posts</h1>
+          <h1>Latest posts</h1>
         </div>
         <div className={styles.postsBottom}>
           <div className={styles.postsWrapper}>
@@ -27,6 +27,7 @@ const LatestPosts: React.FunctionComponent<ILatestPostsProps> = (props) => {
                     category={post.post.category}
                     title={post.post.title}
                     date={new Date(post.post.date)}
+                    imgDir={"./images/postImg1.jpg"}
                   />
                 </div>
               ))

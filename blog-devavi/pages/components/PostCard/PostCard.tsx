@@ -1,12 +1,14 @@
 import * as React from "react";
 import styles from "./PostCard.module.scss";
 import Link from "next/link";
+import Image from "next/image";
 
 interface IPostCardProps {
   id: string;
   category: string;
   title: string;
   date: Date;
+  imgDir: string;
 }
 
 const PostCard: React.FunctionComponent<IPostCardProps> = (props) => {
@@ -18,7 +20,15 @@ const PostCard: React.FunctionComponent<IPostCardProps> = (props) => {
   }, [props.date]);
   return (
     <div className={styles.cardMain}>
-      <div className={styles.cardImg}></div>
+      <div className={styles.cardImg}>
+        <Image
+          src={props.imgDir}
+          alt="ImgPost"
+          layout="fill"
+          object-fit="contain"
+          object-position="center"
+        />
+      </div>
       <div className={styles.cardText}>
         <h3>{props.category}</h3>
         <h1>{props.title}</h1>
