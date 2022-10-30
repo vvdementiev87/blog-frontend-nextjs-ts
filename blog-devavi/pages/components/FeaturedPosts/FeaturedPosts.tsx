@@ -1,19 +1,19 @@
 import { useQuery } from "@tanstack/react-query";
 import * as React from "react";
-import PostCard3x3 from "../PostCard3x3/PostCard3x3";
-import styles from "./LatestPosts.module.scss";
+import PostCard2x2 from "../PostCard2x2/PostCard2x2";
+import styles from "./FeaturedPosts.module.scss";
 import LoaderSpinner from "../LoaderSpiner/LoaderSpinner";
 
-interface ILatestPostsProps {}
+interface IFeaturedPostsProps {}
 
-const LatestPosts: React.FunctionComponent<ILatestPostsProps> = (props) => {
+const FeaturedPosts: React.FunctionComponent<IFeaturedPostsProps> = (props) => {
   const posts = useQuery<any, Error>(["postsData"]);
 
   return (
     <div className={styles.postsMain}>
       <div className={styles.postsContainer}>
         <div className={styles.postsTop}>
-          <h1>Latest posts</h1>
+          <h1>Featured posts</h1>
         </div>
         <div className={styles.postsBottom}>
           <div className={styles.postsWrapper}>
@@ -22,7 +22,7 @@ const LatestPosts: React.FunctionComponent<ILatestPostsProps> = (props) => {
             ) : (
               posts.data.data?.posts.map((post: any) => (
                 <div key={post.uuid}>
-                  <PostCard3x3
+                  <PostCard2x2
                     id={post.uuid}
                     category={post.post.category}
                     title={post.post.title}
@@ -39,4 +39,4 @@ const LatestPosts: React.FunctionComponent<ILatestPostsProps> = (props) => {
   );
 };
 
-export default LatestPosts;
+export default FeaturedPosts;

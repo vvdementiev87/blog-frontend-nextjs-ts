@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import * as React from "react";
-import PostCard from "../PostCard/PostCard";
+import PostCard3x3 from "../PostCard3x3/PostCard3x3";
 import styles from "./AllPosts.module.scss";
 import LoaderSpinner from "../../components/LoaderSpiner/LoaderSpinner";
 
@@ -37,7 +37,7 @@ const AllPosts: React.FunctionComponent<IAllPostsProps> = (props) => {
             ) : (
               posts.data.data.posts.map((post: any) => (
                 <div key={post.uuid}>
-                  <PostCard
+                  <PostCard3x3
                     id={post.uuid}
                     category={post.post.category}
                     title={post.post.title}

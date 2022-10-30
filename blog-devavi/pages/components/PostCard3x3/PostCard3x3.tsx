@@ -1,5 +1,5 @@
 import * as React from "react";
-import styles from "./PostCard.module.scss";
+import styles from "./PostCard3x3.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -11,7 +11,7 @@ interface IPostCardProps {
   imgDir: string;
 }
 
-const PostCard: React.FunctionComponent<IPostCardProps> = (props) => {
+const PostCard3x3: React.FunctionComponent<IPostCardProps> = (props) => {
   const [currentDate, setCurrentDate] = React.useState(0);
   React.useEffect(() => {
     const date = new Date();
@@ -50,4 +50,4 @@ const PostCard: React.FunctionComponent<IPostCardProps> = (props) => {
   );
 };
 
-export default PostCard;
+export default PostCard3x3;

@@ -10,6 +10,7 @@ import LoaderSpinner from "./components/LoaderSpiner/LoaderSpinner";
 import { InferGetStaticPropsType } from "next";
 import AllPosts from "./components/AllPosts/AllPosts";
 import LatestPosts from "./components/LatestPosts/LatestPosts";
+import FeaturedPosts from "./components/FeaturedPosts/FeaturedPosts";
 
 export const getStaticProps = async () => {
   const posts: any = await PostsSevice.showPosts();
@@ -46,6 +47,7 @@ const Home: NextPage<IHomePageProps> = (
         />
       )}
       {posts.isFetching ? <LoaderSpinner /> : <LatestPosts />}
+      {posts.isFetching ? <LoaderSpinner /> : <FeaturedPosts />}
       {posts.isFetching ? <LoaderSpinner /> : <AllPosts />}
       <FooterComponent />
     </div>
