@@ -38,7 +38,6 @@ export default function BlogInfo(props: IBlogInfoProps) {
               })}
             </h4>
             <h4>{currentDate}</h4>
-            <h3>{props.imgDir}</h3>
           </div>
           <div className={styles.blogText}>
             {props?.text ? parse(props?.text) : ""}
@@ -47,8 +46,7 @@ export default function BlogInfo(props: IBlogInfoProps) {
         </div>
       </div>
       <div className={styles.blogRight}>
-        <h3>{props.imgDir}</h3>
-        <Image src={props.imgDir} alt="ImgPost" object-fit="contain" />
+        <Image src={props.imgDir} alt="ImgPost" width={500} height={500} />
       </div>
     </div>
   );
