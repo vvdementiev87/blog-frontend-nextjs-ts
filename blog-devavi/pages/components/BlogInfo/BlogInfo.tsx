@@ -32,7 +32,13 @@ export default function BlogInfo(props: IBlogInfoProps) {
         </div>
       </div>
       <div className={styles.blogRight}>
-        <Image src={props.imgDir} alt="ImgPost" width={500} height={500} />
+        <Image
+          src={props.imgDir}
+          alt="ImgPost"
+          layout="fill"
+          object-fit="contain"
+          object-position="center"
+        />
       </div>
     </div>
   );
