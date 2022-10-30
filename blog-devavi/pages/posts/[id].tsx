@@ -39,7 +39,9 @@ const Home: NextPage = () => {
             </p>
           </>
         }
+        imgDir={"./../images/postImg1.jpg"}
       />
+
       <FooterComponent />
     </div>
   );

@@ -1,5 +1,6 @@
 import * as React from "react";
 import styles from "./BlogDefault.module.scss";
+import Image from "next/image";
 
 export interface IBlogDefaultProps {
   category: any;
@@ -7,6 +8,7 @@ export interface IBlogDefaultProps {
   date: Date;
   text: any;
   author: string;
+  imgDir: string;
 }
 
 export default function BlogDefault(props: IBlogDefaultProps) {
@@ -19,7 +21,15 @@ export default function BlogDefault(props: IBlogDefaultProps) {
 
   return (
     <div className={styles.blogMain}>
-      <div className={styles.blogTop}></div>
+      <div className={styles.blogTop}>
+        <Image
+          src={props.imgDir}
+          alt="ImgPost"
+          layout="fill"
+          objectFit="cover"
+          object-position="center"
+        />
+      </div>
       <div className={styles.blogBottom}>
         <div className={styles.blogCardHeader}>
           <h3>{props.category}</h3>
