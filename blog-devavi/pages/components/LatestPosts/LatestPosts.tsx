@@ -20,7 +20,7 @@ const LatestPosts: React.FunctionComponent<ILatestPostsProps> = (props) => {
             {posts.isFetching ? (
               <LoaderSpinner />
             ) : (
-              posts.data.data.posts.map((post: any) => (
+              posts.data.data?.posts.map((post: any) => (
                 <div key={post.uuid}>
                   <PostCard
                     id={post.uuid}

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://devavi.ru/index.php/";
+const API_URL = "https://devavi.ru/http.php/";
 const TOKEN = "Bearer ";
 
 export interface IPostData {

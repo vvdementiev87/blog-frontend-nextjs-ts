@@ -1,6 +1,8 @@
 import * as React from "react";
 import styles from "./BlogInfo.module.scss";
 import Link from "next/link";
+import parse from "html-react-parser";
+import Image from "next/image";
 
 export interface IBlogInfoProps {
   id: string;
@@ -8,6 +10,7 @@ export interface IBlogInfoProps {
   title: string;
   date: Date;
   text: string;
+  imgDir: string;
 }
 
 export default function BlogInfo(props: IBlogInfoProps) {
@@ -23,11 +26,10 @@ export default function BlogInfo(props: IBlogInfoProps) {
       <div className={styles.blogLeft}>
         <div className={styles.blogCard}>
           <h3>{props.category}</h3>
-          <h3>{props.id}</h3>
           <Link href={"/posts/" + props.id}>
             <h1>{props.title}</h1>
           </Link>
-          <div>
+          <div className={styles.blogDate}>
             <h4>
               {props.date?.toLocaleDateString("ru-RU", {
                 year: "numeric",
@@ -36,12 +38,18 @@ export default function BlogInfo(props: IBlogInfoProps) {
               })}
             </h4>
             <h4>{currentDate}</h4>
+            <h3>{props.imgDir}</h3>
           </div>
-          <p>{props.text}</p>
+          <div className={styles.blogText}>
+            {props?.text ? parse(props?.text) : ""}
+          </div>
           <button>Read more</button>
         </div>
       </div>
-      <div className={styles.blogRight}></div>
+      <div className={styles.blogRight}>
+        <h3>{props.imgDir}</h3>
+        <Image src={props.imgDir} alt="ImgPost" object-fit="contain" />
+      </div>
     </div>
   );
 }

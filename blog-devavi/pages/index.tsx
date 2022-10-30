@@ -38,11 +38,12 @@ const Home: NextPage<IHomePageProps> = (
         <LoaderSpinner />
       ) : (
         <BlogInfo
-          id={posts.data.data.posts[0].uuid}
-          category={posts.data.data.posts[0].post.category}
-          title={posts.data.data.posts[0].post.title}
-          date={new Date(posts.data.data.posts[0].post.date)}
-          text={posts.data.data.posts[0].post.text}
+          id={posts.data.data?.posts[0].uuid}
+          category={posts.data.data?.posts[0].post.category}
+          title={posts.data.data?.posts[0].post.title}
+          date={new Date(posts.data.data?.posts[0].post.date)}
+          text={posts.data.data?.posts[0].post.text}
+          imgDir={"./images/postImg1.jpg"}
         />
       )}
       {posts.isFetching ? <LoaderSpinner /> : <LatestPosts />}

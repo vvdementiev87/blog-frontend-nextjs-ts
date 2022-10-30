@@ -57,7 +57,12 @@ export default function HeaderComponent(props: IHeaderComponentProps) {
             <li>Fashion</li>
           </ul>
           <div className={styles.searchField}>
-            <Image src="/images/search.svg" alt="Logo" width={18} height={18} />
+            <Image
+              src="./images/search.svg"
+              alt="Logo"
+              width={18}
+              height={18}
+            />
             <input
               className={styles.searchInput}
               placeholder="Search here..."
