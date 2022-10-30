@@ -1,0 +1,132 @@
+.blogMain {
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  min-height: 936px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.blogTop {
+  width: 100%;
+  height: 100%;
+  height: 720px;
+  background-color: #c4c4c4;
+}
+
+.blogBottom {
+  width: 100%;
+  max-width: 1024px;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.blogCardHeader {
+  z-index: 10;
+  background-color: #ffffff;
+  border: #ffffff 1px solid;
+  width: 100%;
+  padding: 40px;
+  height: 338px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: -124px;
+}
+.blogCardHeader h3 {
+  margin: 0;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #272343;
+}
+.blogCardHeader h1 {
+  margin: 0;
+  font-family: "PT Serif";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 120%;
+  color: #272343;
+}
+.blogCardHeader > div {
+  margin: 0;
+  display: flex;
+  gap: 21px;
+}
+.blogCardHeader h4 {
+  margin: 0;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #6d7280;
+}
+.blogCardHeader p {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #6d7280;
+}
+.blogCardHeader > button {
+  background-color: #fb743e;
+  padding: 12px 29px;
+  border: none;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.blogCardData {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.blogCardWrapper {
+  width: 100%;
+  display: flex;
+  margin-bottom: 100px;
+}
+
+.blogCardLeft {
+  width: 100%;
+  max-width: 224px;
+}
+.blogCardLeft h4 {
+  margin: 0;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #6d7280;
+}
+
+.blogCardRight {
+  width: 100%;
+  max-width: 872px;
+}
+.blogCardRight p {
+  margin: 0;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #6d7280;
+}/*# sourceMappingURL=BlogDefault.module.css.map */
