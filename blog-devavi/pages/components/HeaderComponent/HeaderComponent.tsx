@@ -41,6 +41,7 @@ export default function HeaderComponent(props: IHeaderComponentProps) {
       pathname: "/search",
       query: { searchRequest: search.toLowerCase() },
     });
+    setSearch("");
   };
 
   return (
