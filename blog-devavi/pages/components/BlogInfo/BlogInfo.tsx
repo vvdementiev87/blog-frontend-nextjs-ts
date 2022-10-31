@@ -34,7 +34,7 @@ export default function BlogInfo(props: IBlogInfoProps) {
   return (
     <div className={styles.blogMain}>
       <div className={styles.blogLeft}>
-        {Array.isArray(props.posts) && (
+        {props.posts?.length > 0 && (
           <div>
             <Carousel
               id={props.posts[currentIndex].uuid}
@@ -47,13 +47,15 @@ export default function BlogInfo(props: IBlogInfoProps) {
                 &lt;
               </button>
               <div className={styles.carouselContentWrapper}>
-                {props.posts.map((post, index) =>
-                  index === currentIndex ? (
-                    <div className={styles.carouselCircleSelected}></div>
-                  ) : (
-                    <div className={styles.carouselCircleDisabled}></div>
-                  )
-                )}
+                {props.posts.map((post, index) => (
+                  <div key={index}>
+                    {index === currentIndex ? (
+                      <div className={styles.carouselCircleSelected}></div>
+                    ) : (
+                      <div className={styles.carouselCircleDisabled}></div>
+                    )}
+                  </div>
+                ))}
               </div>
               <button onClick={next} className={styles.btnArrow}>
                 &gt;

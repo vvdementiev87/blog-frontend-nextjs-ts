@@ -14,6 +14,7 @@ export interface IHeaderComponentProps {
 const queryKey = "authData";
 
 export default function HeaderComponent(props: IHeaderComponentProps) {
+  const [search, setSearch] = React.useState("");
   const { data, refetch, isFetching } = useQuery<IAuthData, Error>(
     [queryKey],
     () => {
@@ -33,6 +34,13 @@ export default function HeaderComponent(props: IHeaderComponentProps) {
   const handleSubmit = () => {
     refetch();
     queryClient.removeQueries([queryKey]);
+  };
+
+  const handleClick = () => {
+    router.push({
+      pathname: "/search",
+      query: { searchRequest: search.toLowerCase() },
+    });
   };
 
   return (
@@ -57,11 +65,19 @@ export default function HeaderComponent(props: IHeaderComponentProps) {
             <li>Fashion</li>
           </ul>
           <div className={styles.searchField}>
-            <Image src="/images/search.svg" alt="Logo" width={18} height={18} />
+            <Image
+              onClick={handleClick}
+              src="/images/search.svg"
+              alt="Logo"
+              width={18}
+              height={18}
+            />
             <input
               className={styles.searchInput}
               placeholder="Search here..."
               type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
             />
           </div>
         </div>
