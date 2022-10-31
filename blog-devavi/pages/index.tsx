@@ -38,13 +38,7 @@ const Home: NextPage<IHomePageProps> = (
       {posts.isFetching ? (
         <LoaderSpinner />
       ) : (
-        <BlogInfo
-          id={posts.data.data?.posts[0].uuid}
-          category={posts.data.data?.posts[0].post.category}
-          title={posts.data.data?.posts[0].post.title}
-          text={posts.data.data?.posts[0].post.text}
-          imgDir={"./images/postImg1.jpg"}
-        />
+        <BlogInfo posts={posts.data.data?.posts} />
       )}
       {posts.isFetching ? <LoaderSpinner /> : <LatestPosts />}
       {posts.isFetching ? <LoaderSpinner /> : <FeaturedPosts />}

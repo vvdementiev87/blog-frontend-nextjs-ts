@@ -1,5 +1,5 @@
 .blogMain {
-  background-color: #ffffff;
+  background-color: #f5f5f59e;
   width: 100%;
   height: 100%;
   min-height: 936px;
@@ -8,84 +8,52 @@
   justify-content: space-between;
 }
 
-.blogCard {
-  z-index: 10;
-  background-color: #ffffff;
-  border: #ffffff 1px solid;
-  width: 650px;
-  padding: 40px;
-  height: 452px;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-right: -124px;
-  & > h3 {
-    margin: 0;
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: #272343;
-  }
-  & > h1 {
-    margin: 0;
-    font-family: "PT Serif";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 120%;
-    color: #272343;
-  }
-
-  & h4 {
-    margin: 0;
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
-    color: #6d7280;
-  }
-  & p {
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
-    color: #6d7280;
-  }
-  & > button {
-    background-color: #fb743e;
-    padding: 12px 29px;
-    border: none;
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 150%;
-    color: #ffffff;
-    cursor: pointer;
-  }
-}
-.blogDate {
-  margin: 0;
-  display: flex;
-  gap: 21px;
-}
-.blogText {
-  margin-bottom: 10px;
-}
 .blogLeft {
+  z-index: 10;
   width: 100%;
   height: 100%;
   max-width: 45vw;
   height: 936px;
-
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: center;
+}
+.carouselWrapper {
+  margin-top: 40px;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
+}
+.carouselContentWrapper {
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.carouselCircleSelected {
+  height: 10px;
+  width: 10px;
+  border: none;
+  border-radius: 50%;
+  background-color: #fb743e;
+}
+.carouselCircleDisabled {
+  height: 10px;
+  width: 10px;
+  border: none;
+  border-radius: 50%;
+  background-color: #fb743e;
+  opacity: 0.2;
+}
+.btnArrow {
+  cursor: pointer;
+  width: 54px;
+  height: 54px;
+  border: none;
+  border-radius: 50%;
+  background-color: #ffffff;
 }
 
 .blogRight {
