@@ -5,7 +5,7 @@ import Carousel from "../Carousel/Carousel";
 
 export interface IPost {
   uuid: string;
-  post: { category: any; title: string; text: any };
+  post: { category: any; title: string; text: any; textShort: any; date: any };
 }
 
 export interface IBlogInfoProps {
@@ -39,8 +39,9 @@ export default function BlogInfo(props: IBlogInfoProps) {
             <Carousel
               id={props.posts[currentIndex].uuid}
               category={props.posts[currentIndex].post.category}
+              date={props.posts[currentIndex].post.date.date}
               title={props.posts[currentIndex].post.title}
-              text={props.posts[currentIndex].post.text}
+              text={props.posts[currentIndex].post.textShort}
             />
             <div className={styles.carouselWrapper}>
               <button onClick={prev} className={styles.btnArrow}>
@@ -69,7 +70,7 @@ export default function BlogInfo(props: IBlogInfoProps) {
           src={"/images/postImg1.jpg"}
           alt="ImgPost"
           layout="fill"
-          object-fit="contain"
+          object-fit="cover"
           object-position="center"
         />
       </div>

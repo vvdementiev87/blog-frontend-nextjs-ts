@@ -26,7 +26,7 @@ const LatestPosts: React.FunctionComponent<ILatestPostsProps> = (props) => {
                     id={post.uuid}
                     category={post.post.category}
                     title={post.post.title}
-                    date={new Date(post.post.date)}
+                    date={post.post.date.date}
                     imgDir={"./images/postImg1.jpg"}
                   />
                 </div>

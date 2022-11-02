@@ -38,7 +38,7 @@ const Search: NextPage<ISearchPageProps> = (props) => {
           );
         })
       );
-  }, [router.query.searchRequest]);
+  }, [router.query.searchRequest, posts.data]);
 
   return (
     <div className={styles.wrapper}>

@@ -6,41 +6,44 @@ import HeaderComponent from "../components/HeaderComponent/HeaderComponent";
 import FooterComponent from "../components/FooterComponent/FooterComponent";
 import { IAuthData } from "../../app/service/auth.service";
 import BlogDefault from "../components/BlogDefault/BlogDefault";
+import React from "react";
+import { PostsSevice } from "../../app/service/posts.service";
+import LoaderSpinner from "../components/LoaderSpiner/LoaderSpinner";
 
 const Home: NextPage = () => {
+  const [findPost, setFindPost] = React.useState({
+    uuid: "",
+    post: { author: "", text: "", category: "", title: "", date: { date: "" } },
+  });
   const { query } = useRouter();
-  console.log(useRouter());
+
   const { data } = useQuery<IAuthData, Error>(["authData"]);
+  const posts = useQuery<any, Error>(["postsData"], () =>
+    PostsSevice.showPosts()
+  );
+  console.log(findPost);
+  React.useEffect(() => {
+    posts.data &&
+      setFindPost(
+        posts.data.data?.posts.find((post: any) => post.uuid == query.id)
+      );
+  }, [query.id, posts]);
 
   return (
     <div className={styles.wrapper}>
       <HeaderComponent token={data?.data?.token} />
-      <BlogDefault
-        author="Kadin Dias"
-        category={query.id}
-        title="How to Get Started With Interior Design"
-        date={new Date(2022, 9, 13)}
-        text={
-          <>
-            <p>
-              Джастин Бивер сделал признание, которого никак не ожидали даже
-              самые большие поклонники талантливого музыканта и поэта. Молодой
-              певец признался, что когда он набрал свой первый тег, его жизнь
-              стала легче. Из окружения канадца сообщают, что частные наставники
-              Бивера, Райан Лослинг и Николас Крейт, часто гуляют по
-              Лос-Анджелесу, споря об инструменте HTML-валидатор.
-            </p>
-            <br />
-            <p>
-              Бивер уже создал несколько сайтов и не намерен останавливаться на
-              достигнутом.
-              <q>Я, вероятно, спою об HTML в своём следующем альбоме</q>, -
-              добавил певец.
-            </p>
-          </>
-        }
-        imgDir={"/images/postImg1.jpg"}
-      />
+      {posts.isFetching ? (
+        <LoaderSpinner />
+      ) : (
+        <BlogDefault
+          author={findPost.post.author}
+          category={findPost.post.category}
+          title={findPost.post.title}
+          date={findPost.post.date.date}
+          text={findPost.post.text}
+          imgDir={"/images/postImg1.jpg"}
+        />
+      )}
 
       <FooterComponent />
     </div>

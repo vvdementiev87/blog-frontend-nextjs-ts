@@ -37,15 +37,7 @@
   flex-direction: column;
   justify-content: space-between;
   margin-top: -124px;
-  & h3 {
-    margin: 0;
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: #272343;
-  }
+
   & h1 {
     margin: 0;
     font-family: "PT Serif";
@@ -94,8 +86,26 @@
 .blogCardData {
   width: 100%;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
+  & h3 {
+    margin: 0;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #6d7280;
+  }
+  & h6 {
+    margin: 0;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    color: #6d7280;
+  }
 }
 .blogCardWrapper {
   width: 100%;
@@ -118,6 +128,45 @@
 .blogCardRight {
   width: 100%;
   max-width: 872px;
+  & h2 {
+    font-family: "PT Serif";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+    color: #272343;
+    margin-bottom: 16px;
+  }
+  & strong {
+    display: block;
+    font-family: "Poppins", cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 150%;
+    color: #494b5c;
+    padding: 12px 0 12px 24px;
+    border-left: #fb743e solid 2px;
+    margin-bottom: 60px;
+  }
+  & h3 {
+    font-family: "PT Serif";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 150%;
+    color: #272343;
+    margin-bottom: 32px;
+  }
+  & h4 {
+    font-family: "PT Serif";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 150%;
+    color: #272343;
+    margin-bottom: 8px;
+  }
   & p {
     margin: 0;
     font-family: "Poppins";
@@ -126,5 +175,45 @@
     font-size: 16px;
     line-height: 150%;
     color: #6d7280;
+    margin-bottom: 24px;
   }
+}
+.blogBtn {
+  width: 100%;
+  max-width: 330px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  color: #ffffff;
+  background-color: #fb743e;
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+.blogBottomBtn {
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 42px;
+  width: 100%;
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  & p {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 125%;
+    color: #272343;
+  }
+}
+.blogShare {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

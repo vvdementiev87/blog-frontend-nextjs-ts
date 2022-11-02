@@ -11,6 +11,7 @@ import { InferGetStaticPropsType } from "next";
 import AllPosts from "./components/AllPosts/AllPosts";
 import LatestPosts from "./components/LatestPosts/LatestPosts";
 import FeaturedPosts from "./components/FeaturedPosts/FeaturedPosts";
+import Head from "next/head";
 
 export const getStaticProps = async () => {
   const posts: any = await PostsSevice.showPosts();
@@ -33,6 +34,17 @@ const Home: NextPage<IHomePageProps> = (
 
   return (
     <div className={styles.wrapper}>
+      <Head>
+        <meta name="charset" content="utf-8" key="charset" />
+        <meta name="url" content="https://vvdementiev87.github.io/" key="url" />
+        <meta name="theme-color" content="#272343e9" key="theme-color" />
+        <meta name="title" content="Portfolio of vvdementiev87" key="title" />
+        <meta
+          name="keywords"
+          content="Portfolio vvdementiev87"
+          key="keywords"
+        />
+      </Head>
       <HeaderComponent token={data?.data?.token} />
 
       {posts.isFetching ? (
