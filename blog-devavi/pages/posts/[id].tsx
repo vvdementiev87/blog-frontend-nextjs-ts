@@ -13,7 +13,14 @@ import LoaderSpinner from "../components/LoaderSpiner/LoaderSpinner";
 const Home: NextPage = () => {
   const [findPost, setFindPost] = React.useState({
     uuid: "",
-    post: { author: "", text: "", category: "", title: "", date: { date: "" } },
+    post: {
+      author: "",
+      text: "",
+      category: "",
+      title: "",
+      date: { date: "" },
+      imgDir: "",
+    },
   });
   const { query } = useRouter();
 
@@ -41,7 +48,7 @@ const Home: NextPage = () => {
           title={findPost.post.title}
           date={findPost.post.date.date}
           text={findPost.post.text}
-          imgDir={"/images/postImg1.jpg"}
+          imgDir={findPost.post.imgDir}
         />
       )}
 

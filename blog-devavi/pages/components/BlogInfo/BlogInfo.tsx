@@ -5,7 +5,14 @@ import Carousel from "../Carousel/Carousel";
 
 export interface IPost {
   uuid: string;
-  post: { category: any; title: string; text: any; textShort: any; date: any };
+  post: {
+    category: any;
+    title: string;
+    text: any;
+    textShort: any;
+    date: any;
+    imgDir: string;
+  };
 }
 
 export interface IBlogInfoProps {
@@ -67,7 +74,7 @@ export default function BlogInfo(props: IBlogInfoProps) {
       </div>
       <div className={styles.blogRight}>
         <Image
-          src={"/images/postImg1.jpg"}
+          src={props.posts[currentIndex].post.imgDir}
           alt="ImgPost"
           layout="fill"
           object-fit="cover"
