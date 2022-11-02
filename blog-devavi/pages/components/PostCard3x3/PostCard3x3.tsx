@@ -21,8 +21,8 @@ const PostCard3x3: React.FunctionComponent<IPostCardProps> = (props) => {
           src={props.imgDir}
           alt="ImgPost"
           layout="fill"
-          object-fit="contain"
-          object-position="center"
+          objectFit="cover"
+          objectPosition="center"
         />
       </div>
       <div className={styles.cardText}>

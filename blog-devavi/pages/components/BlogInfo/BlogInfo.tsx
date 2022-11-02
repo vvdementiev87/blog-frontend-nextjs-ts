@@ -77,8 +77,8 @@ export default function BlogInfo(props: IBlogInfoProps) {
           src={props.posts[currentIndex].post.imgDir}
           alt="ImgPost"
           layout="fill"
-          object-fit="cover"
-          object-position="center"
+          objectFit="cover"
+          objectPosition="center"
         />
       </div>
     </div>

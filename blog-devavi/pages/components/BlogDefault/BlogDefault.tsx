@@ -22,7 +22,7 @@ export default function BlogDefault(props: IBlogDefaultProps) {
           alt="ImgPost"
           layout="fill"
           objectFit="cover"
-          object-position="center"
+          objectPosition="center"
         />
       </div>
       <div className={styles.blogBottom}>
