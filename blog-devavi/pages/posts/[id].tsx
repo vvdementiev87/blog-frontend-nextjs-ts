@@ -9,6 +9,8 @@ import BlogDefault from "../components/BlogDefault/BlogDefault";
 import React from "react";
 import { PostsSevice } from "../../app/service/posts.service";
 import LoaderSpinner from "../components/LoaderSpiner/LoaderSpinner";
+import FeaturedPosts from "../components/FeaturedPosts/FeaturedPosts";
+import CommentForm from "../components/CommentForm/CommentForm";
 
 const Home: NextPage = () => {
   const [findPost, setFindPost] = React.useState({
@@ -52,6 +54,12 @@ const Home: NextPage = () => {
         />
       )}
 
+      {posts.isFetching ? (
+        <LoaderSpinner />
+      ) : (
+        <FeaturedPosts heading="You May Also Like" size={2} />
+      )}
+      <CommentForm />
       <FooterComponent />
     </div>
   );

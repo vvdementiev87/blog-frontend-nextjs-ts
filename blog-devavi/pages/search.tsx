@@ -48,7 +48,11 @@ const Search: NextPage<ISearchPageProps> = (props) => {
       ) : (
         filteredPosts.length > 0 && <BlogInfo posts={filteredPosts} />
       )}
-      {posts.isFetching ? <LoaderSpinner /> : <FeaturedPosts />}
+      {posts.isFetching ? (
+        <LoaderSpinner />
+      ) : (
+        <FeaturedPosts heading="" size={4} />
+      )}
       <FooterComponent />
     </div>
   );

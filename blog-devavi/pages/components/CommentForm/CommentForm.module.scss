@@ -1,0 +1,52 @@
+.commentForm {
+  margin-top: 100px;
+  background-color: #fff;
+  width: 100%;
+  max-width: 872px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  & h3 {
+    font-family: "PT Serif";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 100%;
+    color: #272343;
+  }
+}
+.commentInputs {
+  width: 100%;
+  display: flex;
+  gap: 24px;
+}
+.commentInput {
+  width: 100%;
+  min-height: 56px;
+  align-items: center;
+  padding-left: 26px;
+  background-color: #f5f5f5;
+  border: none;
+}
+.commentText {
+  padding-left: 26px;
+  width: 100%;
+  min-height: 168px;
+  background-color: #f5f5f5;
+  border: none;
+  padding-top: 18px;
+}
+.commentBtn {
+  align-self: flex-end;
+  border: none;
+  background: #fb743e;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #ffffff;
+  padding: 12px 29px;
+}

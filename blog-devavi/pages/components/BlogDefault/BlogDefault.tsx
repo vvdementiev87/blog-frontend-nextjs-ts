@@ -36,19 +36,104 @@ export default function BlogDefault(props: IBlogDefaultProps) {
             <h6>&bull;</h6>
             <h3>{TimeDifference(props.date)}</h3>
           </div>
+          <div className={styles.blogLink}>
+            <div className={styles.blogSvg}>
+              <Image
+                src={"/images/facebook.svg"}
+                alt="printeres"
+                height={16}
+                width={16}
+              />
+            </div>
+            <div className={styles.blogSvg}>
+              <Image
+                src={"/images/twitter.svg"}
+                alt="printeres"
+                height={16}
+                width={16}
+              />
+            </div>
+            <div className={styles.blogSvg}>
+              <Image
+                src={"/images/pinterest-p.svg"}
+                alt="printeres"
+                height={16}
+                width={16}
+              />
+            </div>
+            <div className={styles.blogSvg}>
+              <Image
+                src={"/images/link.svg"}
+                alt="link"
+                height={16}
+                width={16}
+              />
+            </div>
+          </div>
         </div>
 
         <div className={styles.blogCardWrapper}>
           <div className={styles.blogCardLeft}>
-            <h4>{"11"} Likes</h4>
-            <h4>{"100"} Comments</h4>
+            <div>
+              <Image
+                src={"/images/like.svg"}
+                alt="like"
+                height={18}
+                width={18}
+              />
+              <h4>{"11"} Likes</h4>
+            </div>
+            <div>
+              <Image
+                src={"/images/comment.svg"}
+                alt="comment"
+                height={18}
+                width={18}
+              />
+              <h4>{"100"} Comments</h4>
+            </div>
           </div>
           <div className={styles.blogCardRight}>
             <>{props?.text ? parse(props?.text) : ""}</>
             <div className={styles.blogBottomBtn}>
               <button className={styles.blogBtn}>Like</button>
               <div className={styles.blogShare}>
-                <p>Share the post</p>
+                <p>Share the post:</p>
+
+                <div className={styles.blogLink}>
+                  <div className={styles.blogSvg}>
+                    <Image
+                      src={"/images/facebook.svg"}
+                      alt="printeres"
+                      height={16}
+                      width={16}
+                    />
+                  </div>
+                  <div className={styles.blogSvg}>
+                    <Image
+                      src={"/images/twitter.svg"}
+                      alt="printeres"
+                      height={16}
+                      width={16}
+                    />
+                  </div>
+                  <div className={styles.blogSvg}>
+                    <Image
+                      src={"/images/pinterest-p.svg"}
+                      alt="printeres"
+                      height={16}
+                      width={16}
+                    />
+                  </div>
+                  <div className={styles.blogSvg}>
+                    <Image
+                      src={"/images/link.svg"}
+                      alt="link"
+                      height={16}
+                      width={16}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>

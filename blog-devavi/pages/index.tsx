@@ -12,6 +12,7 @@ import AllPosts from "./components/AllPosts/AllPosts";
 import LatestPosts from "./components/LatestPosts/LatestPosts";
 import FeaturedPosts from "./components/FeaturedPosts/FeaturedPosts";
 import Head from "next/head";
+import React from "react";
 
 export const getStaticProps = async () => {
   const posts: any = await PostsSevice.showPosts();
@@ -29,7 +30,7 @@ const Home: NextPage<IHomePageProps> = (
   const posts = useQuery<any, Error>(
     ["postsData"],
     () => PostsSevice.showPosts(),
-    { initialData: props.posts }
+    { initialData: props.posts, refetchOnMount: true }
   );
 
   return (
@@ -50,10 +51,14 @@ const Home: NextPage<IHomePageProps> = (
       {posts.isFetching ? (
         <LoaderSpinner />
       ) : (
-        <BlogInfo posts={posts.data.data?.posts} />
+        <BlogInfo posts={posts?.data.data?.posts} />
       )}
       {posts.isFetching ? <LoaderSpinner /> : <LatestPosts />}
-      {posts.isFetching ? <LoaderSpinner /> : <FeaturedPosts />}
+      {posts.isFetching ? (
+        <LoaderSpinner />
+      ) : (
+        <FeaturedPosts heading="Featured posts" />
+      )}
       {posts.isFetching ? <LoaderSpinner /> : <AllPosts />}
       <FooterComponent />
     </div>
