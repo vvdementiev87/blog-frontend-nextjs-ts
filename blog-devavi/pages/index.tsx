@@ -16,7 +16,7 @@ import React from "react";
 
 export const getStaticProps = async () => {
   const posts: any = await PostsSevice.showPosts();
-  return { props: { posts } };
+  if (!posts) {return { props: {  }}} else {return { props: { posts } }};
 };
 
 export interface IHomePageProps {
@@ -51,7 +51,7 @@ const Home: NextPage<IHomePageProps> = (
       {posts.isFetching ? (
         <LoaderSpinner />
       ) : (
-        <BlogInfo posts={posts?.data.data?.posts} />
+        <BlogInfo posts={posts?.data?.data?.posts} />
       )}
       {posts.isFetching ? <LoaderSpinner /> : <LatestPosts />}
       {posts.isFetching ? (
